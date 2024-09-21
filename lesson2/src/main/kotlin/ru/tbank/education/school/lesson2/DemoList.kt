@@ -22,7 +22,6 @@ object DemoList {
     fun maxElement(): Int {
         return createList().max()
     }
-
     fun sortDesc(): List<Int> {
         return createList().sortedDescending()
     }
