@@ -7,6 +7,7 @@ object DemoMap {
         return (1..Random.nextInt(minLength, maxLength + 1)).map { allowedChars.random() }.joinToString("")
     }
 
+
     fun createMap(): Map<String, Int> {
         return mapOf(
             getRandomString(5, 10) to Random.nextInt(1, 101),

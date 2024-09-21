@@ -18,6 +18,7 @@ object DemoList {
         return createList().map { it * 2 }
     }
 
+
     fun maxElement(): Int {
         return createList().max()
     }
