@@ -13,7 +13,6 @@ object DemoList {
     fun sumEvenList(): Int {
         return createList().filter { it % 2 == 0 }.sum()
     }
-
     fun multiplyList(): List<Int> {
         return createList().map { it * 2 }
     }
