@@ -1,23 +1,30 @@
 package ru.tbank.education.school.lesson2
-
+import kotlin.random.Random
 object DemoMap {
+    private val map: Map<String, Int> = createMap()
+    fun getRandomString(minLength: Int, maxLength: Int): String {
+        val allowedChars = ('a'..'z') + ('A'..'Z')
+        return (1..Random.nextInt(minLength, maxLength + 1)).map { allowedChars.random() }.joinToString("")
+    }
     fun createMap(): Map<String, Int> {
-        TODO()
+        return mapOf(
+            getRandomString(5, 10) to Random.nextInt(1, 101),
+            getRandomString(5, 10) to Random.nextInt(1, 101),
+            getRandomString(5, 10) to Random.nextInt(1, 101),
+            getRandomString(5, 10) to Random.nextInt(1, 101),
+            getRandomString(5, 10) to Random.nextInt(1, 101)
+        )
     }
-
     fun maxValue(): Int {
-        TODO()
+        return map().values.maxOrNull()
     }
-
     fun keyForMaxValue(): String {
-        TODO()
+        return map().maxByOrNull { it.value }!!.key
     }
-
     fun sortByValueDesc(): Map<String, Int> {
-        TODO()
+        return map.toList().sortedByDescending { it.second }.toMap()
     }
-
     fun filterOddValues(): Map<String, Int> {
-        TODO()
+        return map().filterValues { it % 2 == 1 }
     }
 }
